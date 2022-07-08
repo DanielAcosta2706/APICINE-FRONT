@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: #000 !important; /* Si le saco el important no me toma el background */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/***************************************** HEADER *****************************************/
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/***************************************** NAVBARS *****************************************/
+.nav {
+  background-color: #222222;
+  border: 2px solid #4a4a4a;
+  color: #fff; /* No puedo aplicar este color a la letra, se los puse directamente en el componente*/
+  font-size: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.subNav {
+  height: 60px;
+  background-color: #c02328;
+  color: #fff; /* No puedo aplicar este color a la letra, se los puse directamente en el componente*/
+  font-size: 18px;
+}
+
+.linkNav:hover {
+  background-color: #c02328;
+}
+
+/***************************************** MAIN *****************************************/
+
+img {
+  width: auto;
+  height: 500px;
+}
+
+.cont-section {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  margin: 10px 50px 50px;
+  background-color: #c02328;
+  border: 1px solid #b0b0b0;
+}
+
+.section-carousel {
+  grid-row: span 3;
+  grid-column: span 2;
+  width: 100%;
+  border-right: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+  box-shadow: 0px 0px 6px 1px #666;
+}
+
+.sections {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  font-size: 20px;
+  color: #fff;
+  border-bottom: 1px solid #b0b0b0;
+  top: 0;
+  left: 0;
+  position: relative;
+  box-shadow: 0px 0px 6px 1px #666;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  transform: translateY(-3%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sections:hover {
+  transform: translateX(5%);
+}
+
+/***************************************** FOOTER *****************************************/
+
+.footer {
+  background-color: #3e3e3e;
+  display: flex;
+  flex-direction: column;
+}
+
+.rowFooter {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+  color: #fff;
+}
+
+.rowFooter1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+}
+
+.linkFooter:hover {
+  background-color: #c02328;
+}
+
+/***************************************** MEDIA QUERYS *****************************************/
+@media (max-width: 767px) {
+  .cont-section {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  img {
+    height: 250px;
+  }
+  .cont-section {
+    margin: 10px;
   }
 }
