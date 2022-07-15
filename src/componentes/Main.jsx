@@ -3,9 +3,6 @@ import MovieIcon from "@mui/icons-material/Movie";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import MovieFilterIcon from "@mui/icons-material/MovieFilter";
 import { Link } from "react-router-dom";
-import Cinemas from "./Cinemas";
-import Premieres from "./Premieres";
-import Movies from "./Movies";
 
 const Main = () => {
   return (
@@ -54,7 +51,7 @@ const Main = () => {
               }}
             >
               <MovieIcon></MovieIcon>
-              <Movies></Movies>
+              PELICULAS
             </Link>
           </div>
           <div className="sections">
@@ -67,7 +64,7 @@ const Main = () => {
               }}
             >
               <StorefrontIcon></StorefrontIcon>
-              <Cinemas></Cinemas>
+              CINES
             </Link>
           </div>
           <div className="sections">
@@ -80,7 +77,7 @@ const Main = () => {
               }}
             >
               <MovieFilterIcon></MovieFilterIcon>
-              <Premieres></Premieres>
+              ESTRENOS
             </Link>
           </div>
         </section>

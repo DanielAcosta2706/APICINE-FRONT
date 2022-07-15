@@ -40,9 +40,11 @@ img {
 .cont-section {
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
-  margin: 10px 50px 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   background-color: #c02328;
   border: 1px solid #b0b0b0;
+  width: 100%;
 }
 
 .section-carousel {
@@ -73,7 +75,7 @@ img {
   cursor: pointer;
 }
 
-.card:hover {
+.cardMain:hover {
   transform: translateY(-3%);
 }
 
@@ -87,6 +89,7 @@ img {
   background-color: #3e3e3e;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .rowFooter {
@@ -104,6 +107,17 @@ img {
 
 .linkFooter:hover {
   background-color: #c02328;
+}
+
+/*****************************************  *****************************************/
+
+.containerCines {
+  background-color: #e4e6e5;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  font-size: 12px;
 }
 
 /***************************************** MEDIA QUERYS *****************************************/

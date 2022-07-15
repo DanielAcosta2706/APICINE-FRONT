@@ -7,67 +7,134 @@ import Footer from "./componentes/Footer";
 import Premieres from "./componentes/Premieres";
 import Cinemas from "./componentes/Cinemas";
 import Movies from "./componentes/Movies";
+import NewUser from "./componentes/NewUser";
+import Login from "./componentes/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   // ******************************************************************************************** //
-  const url1 = "https://apicine-deploy.herokuapp.com/movies";
+  const url = "https://apicine-deploy.herokuapp.com/movies";
 
   const [mainmovies, setmainmovies] = useState([]);
 
-  const fetchMainMovies = (url1) => {
-    fetch(url1)
+  const fetchMainMovies = (url) => {
+    fetch(url)
       .then((response) => response.json())
       .then((data) => setmainmovies(data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    fetchMainMovies(url1);
+    fetchMainMovies(url);
   }, []);
 
   // ******************************************************************************************** //
-  // const url = "https://apicine-deploy.herokuapp.com/premieres";
+  const url1 = "https://apicine-deploy.herokuapp.com/movies";
 
-  // const [premieres, setpremieres] = useState([]);
+  const [movies, setmovies] = useState([]);
 
-  // const fecthPremieres = (url) => {
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => setpremieres(data))
-  //     .catch((error) => console.log(error));
-  // };
+  const fetchMovies = (url1) => {
+    fetch(url1)
+      .then((response) => response.json())
+      .then((data) => setmovies(data))
+      .catch((error) => console.log(error));
+  };
 
-  // useEffect(() => {
-  //   fecthPremieres(url);
-  // }, []);
+  useEffect(() => {
+    fetchMovies(url1);
+  }, []);
 
   // ******************************************************************************************** //
+  const url2 = "https://apicine-deploy.herokuapp.com/premieres";
+
+  const [premieres, setpremieres] = useState([]);
+
+  const fecthPremieres = (url2) => {
+    fetch(url2)
+      .then((response) => response.json())
+      .then((data) => setpremieres(data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fecthPremieres(url2);
+  }, []);
+
+  // ******************************************************************************************** //
+
+  const url3 = "https://apicine-deploy.herokuapp.com/cinema";
+
+  // const [movies, setmovies] = useState([]);
+  // const [premieres, setpremieres] = useState([]);
+  const [cinema, setcinema] = useState([]);
+
+  // const fetchMovies = (url) => {
+  // const fecthPremieres = (url) => {
+  const fecthCinemas = (url3) => {
+    fetch(url3)
+      .then((response) => response.json())
+      // .then((data) => setmovies(data))
+      // .then((data) => setpremieres(data))
+      .then((data) => setcinema(data))
+      // .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    // fetchMovies(url);
+    // fecthPremieres(url);
+    fecthCinemas(url3);
+  }, []);
+
+  // ******************************************************************************************** //
+
   return (
     <Router>
       <>
         <Header></Header>
-        <Main></Main>
         <Routes>
           <Route
             path="/"
             element={
               <div className="container">
+                <Main></Main>
                 <MainMovies mainmovies={mainmovies}></MainMovies>
               </div>
             }
           ></Route>
           <Route
-            path="premieres"
+            path="/premieres"
             element={
-              <Premieres></Premieres>
-              // <div className="container">
-              //   <Premieres premieres={premieres}></Premieres>
-              // </div>
+              <div className="container">
+                <Premieres premieres={premieres}></Premieres>
+              </div>
             }
           ></Route>
-          <Route path="cinemas" element={<Cinemas></Cinemas>}></Route>
-          <Route path="movies" element={<Movies></Movies>}></Route>
+          <Route
+            path="/cinemas"
+            element={
+              <div className="container">
+                <Cinemas cinema={cinema}></Cinemas>
+              </div>
+            }
+          ></Route>
+          <Route
+            path="/movies"
+            element={
+              <div className="container">
+                <Movies movies={movies}></Movies>
+              </div>
+            }
+          ></Route>
+          <Route path="/NewUser" element={<NewUser></NewUser>}></Route>
+          <Route
+            path="login"
+            element={
+              <div className="contenedor">
+                <Login />
+              </div>
+            }
+          ></Route>
         </Routes>
         <Footer></Footer>
       </>

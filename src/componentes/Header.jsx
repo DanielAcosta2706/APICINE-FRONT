@@ -14,13 +14,15 @@ const Header = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Nav.Link
-                    href="/"
-                    style={{ color: "#fff", textDecoration: "none" }}
-                  >
-                    INICIO
-                  </Nav.Link>
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "#fff",
+                    margin: "auto",
+                  }}
+                >
+                  INICIO
                 </Link>
                 <Nav.Link href="#estrenos" style={{ color: "#fff" }}>
                   PROXIMOS ESTRENOS
@@ -34,11 +36,27 @@ const Header = () => {
                   style={{ color: "#fff" }}
                 >
                   <NavDropdown.Item href="#action/3.1">
-                    INICIAR SESION
+                    <Link
+                      to="Login"
+                      style={{
+                        textDecoration: "none",
+                        color: "#000",
+                      }}
+                    >
+                      INICIAR SESION
+                    </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.2">
-                    REGISTRARSE
+                    <Link
+                      to="NewUser"
+                      style={{
+                        textDecoration: "none",
+                        color: "#000",
+                      }}
+                    >
+                      REGISTRARSE
+                    </Link>
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
@@ -79,10 +97,15 @@ const Header = () => {
               </NavDropdown>
             </Nav>
             <Nav>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <Nav.Link href="/" style={{ color: "#fff" }}>
-                  CINEX
-                </Nav.Link>
+              <Link
+                to="/"
+                style={{
+                  textDecoration: "none",
+                  color: "#fff",
+                  margin: "auto",
+                }}
+              >
+                CINEX
               </Link>
             </Nav>
           </Container>

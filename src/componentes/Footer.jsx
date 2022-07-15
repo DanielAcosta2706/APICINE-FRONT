@@ -8,7 +8,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 const Footer = () => {
   return (
     <>
-      <Container className="footer">
+      <Container fluid className="footer">
         <Row className="rowFooter rowFooter1">
           <Col>--- CINEX ---</Col>
         </Row>

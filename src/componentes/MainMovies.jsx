@@ -2,9 +2,14 @@ import React from "react";
 
 const MainMovies = ({ mainmovies }) => {
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{
+        marginTop: "50px",
+      }}
+    >
       <div className="row">
-        {mainmovies.slice(0, 8).map((item, index) => (
+        {mainmovies.map((item, index) => (
           <div key={index} className="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div
               className="card"
@@ -22,22 +27,12 @@ const MainMovies = ({ mainmovies }) => {
               <img
                 className="card-img-top"
                 src={item.image}
-                alt="movie"
+                alt={item.name}
                 style={{
                   width: "100%",
-                  height: "350px",
+                  height: "400px",
                 }}
               />
-              <hr />
-              <h4
-                className="card-title"
-                style={{
-                  textAlign: "center",
-                  fontFamily: "bold",
-                }}
-              >
-                {item.name}
-              </h4>
             </div>
           </div>
         ))}
