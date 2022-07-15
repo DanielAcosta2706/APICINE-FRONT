@@ -64,25 +64,16 @@ function App() {
 
   const url3 = "https://apicine-deploy.herokuapp.com/cinema";
 
-  // const [movies, setmovies] = useState([]);
-  // const [premieres, setpremieres] = useState([]);
   const [cinema, setcinema] = useState([]);
 
-  // const fetchMovies = (url) => {
-  // const fecthPremieres = (url) => {
   const fecthCinemas = (url3) => {
     fetch(url3)
       .then((response) => response.json())
-      // .then((data) => setmovies(data))
-      // .then((data) => setpremieres(data))
       .then((data) => setcinema(data))
-      // .then((data) => console.log(data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    // fetchMovies(url);
-    // fecthPremieres(url);
     fecthCinemas(url3);
   }, []);
 
